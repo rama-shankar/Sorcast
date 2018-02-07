@@ -6,12 +6,12 @@ __config = {
 	"exchanges": ['NSE', 'BSE'],
     "nse_url": 'https://www.nseindia.com/content/historical/EQUITIES/%s/%s/%s.%s',
 	"nse_file_name": 'cm%s%s%sbhav.csv',
-	"nse_data": root_path + '\\DATA\\NSE',
-	"nse_result": root_path + '\\RESULT\\NSE',
+	"nse_data": root_path + '/DATA/NSE',
+	"nse_result": root_path + '/RESULT/NSE',
 	"bse_url": 'http://www.bseindia.com/download/BhavCopy/Equity/%s.%s',
 	"bse_file_name": 'EQ%s.CSV',
-	"bse_data": root_path + '\\DATA\\BSE',
-	"bse_result": root_path + '\\RESULT\\BSE'
+	"bse_data": root_path + '/DATA/BSE',
+	"bse_result": root_path + '/RESULT/BSE'
 }
 def configure():	
 	configure_log()
