@@ -9,6 +9,7 @@ def prepareDate():
 	end_date = datetime.date.today()
 	cyear = end_date.year
 	start_date = datetime.datetime(cyear - 3, 1,1).date()	
+	start_date = datetime.datetime(cyear - 3, 1,31).date()	
 	return start_date, end_date
 	
 	
@@ -26,7 +27,7 @@ def prepare_bse_file_name(date):
 	
 def write_result(exchange, _result, date):
 	keys = _result[0].keys()	
-	filename = conf.get("%s_result" %(exchange.lower())) + "\\" + date.strftime('%d_%b_%Y') + ".csv"	
+	filename = conf.get("%s_result" %(exchange.lower())) + "/" + date.strftime('%d_%b_%Y') + ".csv"	
 	with open(filename, 'w' , newline='') as output_file:
 		dict_writer = csv.DictWriter(output_file, keys)
 		dict_writer.writeheader()
@@ -58,9 +59,9 @@ def is_valid_content(content_type):
 def get_exchange_file(exchange, date):
 	base = conf.get('%s_data' % (exchange))
 	if exchange == 'nse':
-		return base + "\\" + prepare_nse_file_name(date)
+		return base + "/" + prepare_nse_file_name(date)
 	if exchange == 'bse':
-		return base + "\\" + prepare_bse_file_name(date)
+		return base + "/" + prepare_bse_file_name(date)
 	
 class StopWatch:
 	def __init__(self):
