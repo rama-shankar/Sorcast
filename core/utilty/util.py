@@ -9,7 +9,7 @@ def prepareDate():
 	end_date = datetime.date.today()
 	cyear = end_date.year
 	start_date = datetime.datetime(cyear - 3, 1,1).date()	
-	start_date = datetime.datetime(cyear - 3, 1,31).date()	
+	end_date = datetime.datetime(cyear - 3, 1,31).date()	
 	return start_date, end_date
 	
 	
