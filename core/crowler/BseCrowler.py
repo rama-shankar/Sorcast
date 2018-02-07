@@ -34,7 +34,7 @@ class BseCrowler:
 		while(start_date <= end_date):		
 			url, fileName = self.prepare_url_and_file_name(start_date)		
 			weekday = calendar.day_abbr[start_date.weekday()]	
-			_file = self.data + "\%s" %(fileName.replace("_", '.'))
+			_file = self.data + "/%s" %(fileName.replace("_", '.'))
 			if weekday != 'Sat' and weekday != 'Sun' and not is_file_exist(_file) :
 				result = self.pool.apply_async(request_and_extract, args=(url, self.data))			
 				if result.get() == True:

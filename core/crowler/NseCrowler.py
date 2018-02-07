@@ -27,7 +27,7 @@ class NseCrowler:
 		while(start_date <= end_date):		
 			url, fileName = self.prepare_url_and_file_name(start_date)		
 			weekday = calendar.day_abbr[start_date.weekday()]			
-			file_path_on_disk =  self.data + "\%s" %(fileName) 			
+			file_path_on_disk =  self.data + "/%s" %(fileName) 			
 			if weekday != 'Sat' and weekday != 'Sun' and not is_file_exist(file_path_on_disk) :				
 				result = self.pool.apply_async(request_and_extract, args=(url, self.data))			
 				if result.get() == True:
