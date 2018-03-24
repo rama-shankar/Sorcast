@@ -12,6 +12,10 @@ def prepareDate():
 	#end_date = datetime.datetime(cyear - 3, 1,31).date()	
 	return start_date, end_date
 	
+def get_date_from_string(date_string):
+	if date_string is not None: 
+		return datetime.datetime.strptime(date_string, "%Y-%m-%d")
+	return datetime.date.today()
 	
 def prepare_nse_file_name(date):
 	year = date.year
